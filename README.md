@@ -2,6 +2,14 @@
 
 Paste a text message and see whether it looks like spam. A beginner machine-learning project built end to end: React frontend, FastAPI backend and a scikit-learn model.
 
+## Screenshots
+
+![Homepage](docs/homepage.png)
+
+![Prediction result](docs/result.png)
+
+![API documentation](docs/api-docs.png)
+
 ## Important limitation
 
 This model was trained on the SMS Spam Collection, which labels messages as **spam or ham (not spam)**. It does **not** detect verified fraud or scams. "Not flagged" does not mean a message is safe. This is a learning project and should not be used to make security decisions.
