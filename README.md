@@ -26,9 +26,9 @@ Trained on the SMS Spam Collection (UCI) with an 80% train / 20% test split.
 
 | Metric (spam class) | Score |
 |---|---|
-| Precision | FILL IN |
-| Recall | FILL IN |
-| F1-score | FILL IN |
+| Precision | 0.98 |
+| Recall | 0.67 |
+| F1-score | 0.80 |
 
 ## Run it locally
 
