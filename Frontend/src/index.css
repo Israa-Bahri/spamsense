@@ -1,0 +1,147 @@
+/* ===== 1. COLOR VARIABLES =====
+   Change a color here once and the whole app updates */
+:root {
+  --bg: #0a1128;            /* deep navy page background */
+  --card: #121b3a;          /* slightly lighter navy for cards */
+  --border: #26325e;        /* navy-blue border lines */
+  --text: #e6e8f0;          /* main text (near white) */
+  --muted: #9aa3b8;         /* muted silver for descriptions */
+  --primary: #b9a8f5;       /* soft lavender (headings, button) */
+  --primary-hover: #a28ff0; /* slightly deeper lavender on hover */
+}
+
+/* ===== 2. GLOBAL RESET ===== */
+* {
+  box-sizing: border-box;   /* width includes padding, avoids layout surprises */
+}
+
+body {
+  margin: 0;                                        /* remove default browser margin */
+  font-family: "Segoe UI", Arial, sans-serif;       /* clean sans-serif font */
+  background: var(--bg);                            /* navy background */
+  color: var(--text);
+}
+
+/* ===== 3. TEXT ===== */
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  color: var(--primary);    /* lavender heading */
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+p {
+  color: var(--muted);      /* silver description text */
+  line-height: 1.5;         /* more space between lines = easier to read */
+}
+
+/* ===== 4. ANALYZER CARD ===== */
+.analyzer {
+  max-width: 600px;         /* keep the card from stretching too wide */
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;      /* rounded corners */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35); /* soft dark shadow for depth */
+}
+
+/* Label above the textarea */
+.analyzer label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ===== 5. TEXTAREA ===== */
+.analyzer textarea {
+  width: 100%;              /* fill the card */
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background: var(--bg);    /* darker box inside the card */
+  color: var(--text);       /* typed text color */
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;     /* same font as the page */
+  font-size: 1rem;
+  resize: vertical;         /* user can only resize up/down */
+}
+
+/* Placeholder ("Paste a message here") in silver */
+.analyzer textarea::placeholder {
+  color: var(--muted);
+}
+
+/* Visible focus ring when the box is clicked or reached with Tab */
+.analyzer textarea:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+  border-color: var(--primary);
+}
+
+/* ===== 6. BUTTON ===== */
+button {
+  padding: 0.7rem 1.4rem;
+  background: var(--primary);   /* lavender button */
+  color: var(--bg);             /* navy text on lavender = good contrast */
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;              /* hand cursor on hover */
+  transition: background 0.2s;  /* smooth color change */
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+/* Visible focus ring for keyboard users */
+button:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
+}
+
+/* Disabled button looks disabled while "Analyzing..." */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== 7. RESULT BOX ===== */
+/* Box that shows the result under the button */
+.result {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  background: rgba(185, 168, 245, 0.12); /* soft lavender tint */
+  border: 1px solid var(--primary);      /* lavender border */
+  border-radius: 8px;
+  color: var(--primary);
+}
+
+/* Errors: amber tint, different from the red "spam" result */
+.result-error {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: #f59e0b;
+  color: #fcd34d;
+}
+
+/* ===== 9. PRIVACY NOTE ===== */
+.privacy-note {
+  margin: 0 0 1rem;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+  background: rgba(154, 163, 184, 0.1);   /* soft silver tint */
+  border-left: 3px solid var(--primary);  /* lavender bar on the left */
+  border-radius: 6px;
+}
+
+.privacy-note strong {
+  color: var(--text);
+}

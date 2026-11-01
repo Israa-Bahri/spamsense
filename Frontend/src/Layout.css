@@ -1,0 +1,56 @@
+/* The whole page wrapper */
+.layout {
+  min-height: 100vh;       /* at least the full screen height */
+  display: flex;           /* use flexbox */
+  flex-direction: column;  /* stack header, main, footer vertically */
+}
+
+/* Style header and footer the same way */
+header, footer {
+  text-align: center;       /* center the app name and footer text */
+}
+
+main {
+  flex: 1;                  /* take the leftover space, pushing the footer down */
+  padding: 1rem;
+  display: flex;            /* use flexbox to position the children */
+  flex-direction: column;   /* stack heading, text, and card vertically */
+  align-items: center;      /* center everything horizontally */
+  text-align: center;       /* center the text inside each element */
+}
+
+/* Spam-like: red tint */
+.result-spam {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: #ef4444;
+  color: #fca5a5;
+}
+
+/* Not flagged: neutral lavender, on purpose NOT green, because it does not mean safe */
+.result-ham {
+  background: rgba(185, 168, 245, 0.12);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Errors: muted silver */
+.result-error {
+  color: var(--muted);
+}
+
+/* The limitation text under the result */
+.limitation {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+/* Faded button with a "not allowed" cursor while waiting */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Stop the hover color change while disabled */
+button:disabled:hover {
+  background: var(--primary);
+}
